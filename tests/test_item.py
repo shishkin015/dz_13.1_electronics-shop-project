@@ -1,17 +1,18 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 import pytest
+
 from src.item import Item
 
 
 @pytest.fixture
 def item():
     """Фикстура для создания объекта класса Item."""
-    return Item(name='test_name', price=1.5, quantity=10)
+    return Item(name='test_name1111', price=1.5, quantity=10)
 
 
 def test_item_init(item):
     """Тест для создания объекта класса Item."""
-    assert item.name == 'test_name'
+    assert item.name == 'test_name1111'
     assert item.price == 1.5
     assert item.quantity == 10
 
@@ -28,6 +29,5 @@ def test_item_apply_discount(item):
     assert item.price == 1.5
 
 
-# def test_item_all(item):
-#     """Тест для проверки всех объектов класса Item."""
-#     assert item.all == [item]
+
+
