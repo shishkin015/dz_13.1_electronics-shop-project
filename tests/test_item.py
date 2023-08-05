@@ -29,5 +29,11 @@ def test_item_apply_discount(item):
     assert item.price == 1.5
 
 
+def test_item_repr(item):
+    """Тест для вывода информации о товаре."""
+    assert repr(item) == "Item('test_name1111', 1.5, 10)"
 
 
+def test_item_str(item):
+    """Тест для вывода информации о товаре."""
+    assert str(item) == "test_name1111"
