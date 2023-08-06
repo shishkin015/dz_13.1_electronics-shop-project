@@ -15,6 +15,9 @@ def test_item_init(item):
     assert item.name == 'test_name1111'
     assert item.price == 1.5
     assert item.quantity == 10
+    assert item.name == str(item)
+    assert item.price == float(item.price)
+    assert item.quantity == int(item.quantity)
 
 
 def test_item_calculate_total_price(item):
