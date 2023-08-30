@@ -1,7 +1,7 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 import pytest
 
-from src.item import Item
+from src.item import Item, InstantiateCSVError
 
 
 @pytest.fixture
@@ -40,3 +40,12 @@ def test_item_repr(item):
 def test_item_str(item):
     """Тест для вывода информации о товаре."""
     assert str(item) == "test_name1111"
+
+
+def test_instantiate_from_csv_error():
+    """Проверяем присутствие или повреждение file.csv"""
+    with pytest.raises(FileNotFoundError, match="Отсутствует файл item.csv"):
+        Item.instantiate_from_csv('')
+
+    with pytest.raises(InstantiateCSVError, match="Файл item.csv поврежден"):
+        Item.instantiate_from_csv('test_csv.csv')
